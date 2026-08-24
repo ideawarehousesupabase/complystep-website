@@ -116,8 +116,19 @@ export const Route = createFileRoute("/")({
         content:
           "Ship compliant campaigns without the bottleneck. AI compliance review and live monitoring for UK regulated marketing.",
       },
+      { property: "og:url", content: "https://complystep-phi.vercel.app/" },
+      {
+        property: "og:image",
+        content: "https://complystep-phi.vercel.app/complystep-logo.png",
+      },
+      {
+        name: "twitter:image",
+        content: "https://complystep-phi.vercel.app/complystep-logo.png",
+      },
     ],
+    links: [{ rel: "canonical", href: "https://complystep-phi.vercel.app/" }],
   }),
+
   component: Home,
 });
 
