@@ -1,4 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+
+const FAQS = [
+  {
+    q: "How is ComplyStep different from a generic AI content checker?",
+    a: "ComplyStep runs on a sector-specific regulatory knowledge graph trained on FCA, ASA, MHRA and CAP Code sources, with explainable multi-agent reasoning, so every flag cites the rule behind it.",
+  },
+  {
+    q: "Does ComplyStep only review campaigns before they go live?",
+    a: "No. We cover the full lifecycle: pre-publication review, approval workflow, post-publication live monitoring, affiliate surveillance, audit evidence and performance analytics.",
+  },
+  {
+    q: "Which industries do you support?",
+    a: "UK financial advisors, private healthcare, legal services, and gambling and affiliate brands, plus adjacent regulated sectors on request.",
+  },
+  {
+    q: "How long does onboarding take?",
+    a: "Most teams are live within two weeks. We import your existing rules and brand guidelines, then calibrate scoring against your recent campaigns.",
+  },
+  {
+    q: "Will compliance slow my marketing team down?",
+    a: "The opposite. Approvals move from weeks to hours, and we link approved layouts to conversion performance so compliance becomes a growth lever.",
+  },
+  {
+    q: "Is my campaign data secure?",
+    a: "Yes. Data is processed in line with UK GDPR, access is role-based, and every review is stored in an immutable audit trail you can export for regulators.",
+  },
+];
+
 
 const FEATURES = [
   {
@@ -87,12 +116,25 @@ export const Route = createFileRoute("/")({
         content:
           "Ship compliant campaigns without the bottleneck. AI compliance review and live monitoring for UK regulated marketing.",
       },
+      { property: "og:url", content: "https://complystep-phi.vercel.app/" },
+      {
+        property: "og:image",
+        content: "https://complystep-phi.vercel.app/complystep-logo.png",
+      },
+      {
+        name: "twitter:image",
+        content: "https://complystep-phi.vercel.app/complystep-logo.png",
+      },
     ],
+    links: [{ rel: "canonical", href: "https://complystep-phi.vercel.app/" }],
   }),
+
   component: Home,
 });
 
 function Home() {
+  const [openFaq, setOpenFaq] = useState(0);
+
   return (
     <div className="page">
       <section className="hero">
@@ -201,6 +243,31 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <section className="sec sec-soft" id="faqs">
+        <div className="container">
+          <div className="eyebrow">
+            <span className="dot" /> FAQs
+          </div>
+          <h2 className="h2">Questions we hear most often.</h2>
+          <div className="faq-wrap">
+            {FAQS.map((f, i) => (
+              <div className={openFaq === i ? "faq-item open" : "faq-item"} key={f.q}>
+                <button
+                  className="faq-q"
+                  aria-expanded={openFaq === i}
+                  onClick={() => setOpenFaq(openFaq === i ? -1 : i)}
+                >
+                  <h4>{f.q}</h4>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-body">{f.a}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }

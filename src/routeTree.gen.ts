@@ -15,9 +15,11 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CaseStudyRouteImport } from './routes/case-study'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as RegulatoryComplianceRouteImport } from './routes/regulatory-compliance'
+import { Route as SitemapRouteImport } from './routes/sitemap'
 import { Route as TermsRouteImport } from './routes/terms'
 
 const IndexRoute = IndexRouteImport.update({
@@ -50,6 +52,11 @@ const IndustriesRoute = IndustriesRouteImport.update({
   path: '/industries',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -65,6 +72,11 @@ const RegulatoryComplianceRoute = RegulatoryComplianceRouteImport.update({
   path: '/regulatory-compliance',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapRoute = SitemapRouteImport.update({
+  id: '/sitemap',
+  path: '/sitemap',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -78,9 +90,11 @@ export interface FileRoutesByFullPath {
   '/case-study': typeof CaseStudyRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRoute
   '/regulatory-compliance': typeof RegulatoryComplianceRoute
+  '/sitemap': typeof SitemapRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesByTo {
@@ -90,9 +104,11 @@ export interface FileRoutesByTo {
   '/case-study': typeof CaseStudyRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRoute
   '/regulatory-compliance': typeof RegulatoryComplianceRoute
+  '/sitemap': typeof SitemapRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesById {
@@ -103,9 +119,11 @@ export interface FileRoutesById {
   '/case-study': typeof CaseStudyRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRoute
   '/regulatory-compliance': typeof RegulatoryComplianceRoute
+  '/sitemap': typeof SitemapRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
@@ -117,9 +135,11 @@ export interface FileRouteTypes {
     | '/case-study'
     | '/contact'
     | '/industries'
+    | '/pricing'
     | '/privacy'
     | '/products'
     | '/regulatory-compliance'
+    | '/sitemap'
     | '/terms'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -129,9 +149,11 @@ export interface FileRouteTypes {
     | '/case-study'
     | '/contact'
     | '/industries'
+    | '/pricing'
     | '/privacy'
     | '/products'
     | '/regulatory-compliance'
+    | '/sitemap'
     | '/terms'
   id:
     | '__root__'
@@ -141,9 +163,11 @@ export interface FileRouteTypes {
     | '/case-study'
     | '/contact'
     | '/industries'
+    | '/pricing'
     | '/privacy'
     | '/products'
     | '/regulatory-compliance'
+    | '/sitemap'
     | '/terms'
   fileRoutesById: FileRoutesById
 }
@@ -154,9 +178,11 @@ export interface RootRouteChildren {
   CaseStudyRoute: typeof CaseStudyRoute
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
+  PricingRoute: typeof PricingRoute
   PrivacyRoute: typeof PrivacyRoute
   ProductsRoute: typeof ProductsRoute
   RegulatoryComplianceRoute: typeof RegulatoryComplianceRoute
+  SitemapRoute: typeof SitemapRoute
   TermsRoute: typeof TermsRoute
 }
 
@@ -204,6 +230,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -225,6 +258,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RegulatoryComplianceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap': {
+      id: '/sitemap'
+      path: '/sitemap'
+      fullPath: '/sitemap'
+      preLoaderRoute: typeof SitemapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -242,9 +282,11 @@ const rootRouteChildren: RootRouteChildren = {
   CaseStudyRoute: CaseStudyRoute,
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
+  PricingRoute: PricingRoute,
   PrivacyRoute: PrivacyRoute,
   ProductsRoute: ProductsRoute,
   RegulatoryComplianceRoute: RegulatoryComplianceRoute,
+  SitemapRoute: SitemapRoute,
   TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
