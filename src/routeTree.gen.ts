@@ -19,6 +19,7 @@ import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as RegulatoryComplianceRouteImport } from './routes/regulatory-compliance'
+import { Route as SitemapRouteImport } from './routes/sitemap'
 import { Route as TermsRouteImport } from './routes/terms'
 
 const IndexRoute = IndexRouteImport.update({
@@ -71,6 +72,11 @@ const RegulatoryComplianceRoute = RegulatoryComplianceRouteImport.update({
   path: '/regulatory-compliance',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapRoute = SitemapRouteImport.update({
+  id: '/sitemap',
+  path: '/sitemap',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRoute
   '/regulatory-compliance': typeof RegulatoryComplianceRoute
+  '/sitemap': typeof SitemapRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesByTo {
@@ -101,6 +108,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRoute
   '/regulatory-compliance': typeof RegulatoryComplianceRoute
+  '/sitemap': typeof SitemapRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesById {
@@ -115,6 +123,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRoute
   '/regulatory-compliance': typeof RegulatoryComplianceRoute
+  '/sitemap': typeof SitemapRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/products'
     | '/regulatory-compliance'
+    | '/sitemap'
     | '/terms'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -143,6 +153,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/products'
     | '/regulatory-compliance'
+    | '/sitemap'
     | '/terms'
   id:
     | '__root__'
@@ -156,6 +167,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/products'
     | '/regulatory-compliance'
+    | '/sitemap'
     | '/terms'
   fileRoutesById: FileRoutesById
 }
@@ -170,6 +182,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   ProductsRoute: typeof ProductsRoute
   RegulatoryComplianceRoute: typeof RegulatoryComplianceRoute
+  SitemapRoute: typeof SitemapRoute
   TermsRoute: typeof TermsRoute
 }
 
@@ -245,6 +258,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RegulatoryComplianceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap': {
+      id: '/sitemap'
+      path: '/sitemap'
+      fullPath: '/sitemap'
+      preLoaderRoute: typeof SitemapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -266,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   ProductsRoute: ProductsRoute,
   RegulatoryComplianceRoute: RegulatoryComplianceRoute,
+  SitemapRoute: SitemapRoute,
   TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
