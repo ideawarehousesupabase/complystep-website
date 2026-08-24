@@ -1,4 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+
+const FAQS = [
+  {
+    q: "How is ComplyStep different from a generic AI content checker?",
+    a: "ComplyStep runs on a sector-specific regulatory knowledge graph trained on FCA, ASA, MHRA and CAP Code sources, with explainable multi-agent reasoning, so every flag cites the rule behind it.",
+  },
+  {
+    q: "Does ComplyStep only review campaigns before they go live?",
+    a: "No. We cover the full lifecycle: pre-publication review, approval workflow, post-publication live monitoring, affiliate surveillance, audit evidence and performance analytics.",
+  },
+  {
+    q: "Which industries do you support?",
+    a: "UK financial advisors, private healthcare, legal services, and gambling and affiliate brands, plus adjacent regulated sectors on request.",
+  },
+  {
+    q: "How long does onboarding take?",
+    a: "Most teams are live within two weeks. We import your existing rules and brand guidelines, then calibrate scoring against your recent campaigns.",
+  },
+  {
+    q: "Will compliance slow my marketing team down?",
+    a: "The opposite. Approvals move from weeks to hours, and we link approved layouts to conversion performance so compliance becomes a growth lever.",
+  },
+  {
+    q: "Is my campaign data secure?",
+    a: "Yes. Data is processed in line with UK GDPR, access is role-based, and every review is stored in an immutable audit trail you can export for regulators.",
+  },
+];
+
 
 const FEATURES = [
   {
