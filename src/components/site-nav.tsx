@@ -1,24 +1,22 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
-
 export const NAV_ITEMS = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
-  { to: "/products", label: "Products" },
+  { to: "/products", label: "Product" },
   { to: "/industries", label: "Industries" },
-  { to: "/case-study", label: "Case Study" },
-  { to: "/blog", label: "Blog" },
-  { to: "/contact", label: "Contact" },
+  { to: "/pricing", label: "Pricing" },
 ] as const;
 
-const MOBILE_LABELS: Record<string, string> = {
-  "/products": "Products / Services",
-  "/contact": "Contact Us",
-};
+export const INSIGHTS_ITEMS = [
+  { to: "/blog", label: "Blog" },
+  { to: "/case-study", label: "Case Studies" },
+] as const;
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
+  const [insightsOpen, setInsightsOpen] = useState(false);
 
   return (
     <>
@@ -27,11 +25,11 @@ export function SiteNav() {
           <img
             src="/complystep-logo.png"
             alt="ComplyStep"
-            width={782}
-            height={146}
+            width={1061}
+            height={229}
             loading="eager"
             decoding="sync"
-            style={{ height: 34, width: "auto", display: "block", maxWidth: "100%" }}
+            style={{ height: 36, width: "auto", display: "block", maxWidth: "100%" }}
           />
         </Link>
 
@@ -47,10 +45,35 @@ export function SiteNav() {
               </Link>
             </li>
           ))}
+          <li
+            className="nav-drop"
+            onMouseEnter={() => setInsightsOpen(true)}
+            onMouseLeave={() => setInsightsOpen(false)}
+          >
+            <button
+              className="nav-drop-btn"
+              aria-expanded={insightsOpen}
+              onClick={() => setInsightsOpen((v) => !v)}
+            >
+              Insights <i className="fas fa-chevron-down" />
+            </button>
+            <div className={insightsOpen ? "nav-drop-menu open" : "nav-drop-menu"}>
+              {INSIGHTS_ITEMS.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  activeProps={{ className: "active" }}
+                  onClick={() => setInsightsOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </li>
         </ul>
         <div className="nav-right">
           <Link to="/contact" className="btn-demo-nav">
-            Book a Demo
+            Contact Us
           </Link>
         </div>
         <button
@@ -68,11 +91,16 @@ export function SiteNav() {
       <div className={open ? "mobile-nav open" : "mobile-nav"}>
         {NAV_ITEMS.map((item) => (
           <Link key={item.to} to={item.to} onClick={() => setOpen(false)}>
-            {MOBILE_LABELS[item.to] ?? item.label}
+            {item.label}
+          </Link>
+        ))}
+        {INSIGHTS_ITEMS.map((item) => (
+          <Link key={item.to} to={item.to} onClick={() => setOpen(false)}>
+            {item.label}
           </Link>
         ))}
         <Link to="/contact" className="mob-cta" onClick={() => setOpen(false)}>
-          Book a Demo
+          Contact Us
         </Link>
       </div>
     </>
