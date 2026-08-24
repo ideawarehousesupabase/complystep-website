@@ -201,6 +201,31 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <section className="sec sec-soft" id="faqs">
+        <div className="container">
+          <div className="eyebrow">
+            <span className="dot" /> FAQs
+          </div>
+          <h2 className="h2">Questions we hear most often.</h2>
+          <div className="faq-wrap">
+            {FAQS.map((f, i) => (
+              <div className={openFaq === i ? "faq-item open" : "faq-item"} key={f.q}>
+                <button
+                  className="faq-q"
+                  aria-expanded={openFaq === i}
+                  onClick={() => setOpenFaq(openFaq === i ? -1 : i)}
+                >
+                  <h4>{f.q}</h4>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-body">{f.a}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
