@@ -15,6 +15,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CaseStudyRouteImport } from './routes/case-study'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as RegulatoryComplianceRouteImport } from './routes/regulatory-compliance'
@@ -50,6 +51,11 @@ const IndustriesRoute = IndustriesRouteImport.update({
   path: '/industries',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/case-study': typeof CaseStudyRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRoute
   '/regulatory-compliance': typeof RegulatoryComplianceRoute
@@ -90,6 +97,7 @@ export interface FileRoutesByTo {
   '/case-study': typeof CaseStudyRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRoute
   '/regulatory-compliance': typeof RegulatoryComplianceRoute
@@ -103,6 +111,7 @@ export interface FileRoutesById {
   '/case-study': typeof CaseStudyRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRoute
   '/regulatory-compliance': typeof RegulatoryComplianceRoute
@@ -117,6 +126,7 @@ export interface FileRouteTypes {
     | '/case-study'
     | '/contact'
     | '/industries'
+    | '/pricing'
     | '/privacy'
     | '/products'
     | '/regulatory-compliance'
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/case-study'
     | '/contact'
     | '/industries'
+    | '/pricing'
     | '/privacy'
     | '/products'
     | '/regulatory-compliance'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/case-study'
     | '/contact'
     | '/industries'
+    | '/pricing'
     | '/privacy'
     | '/products'
     | '/regulatory-compliance'
@@ -154,6 +166,7 @@ export interface RootRouteChildren {
   CaseStudyRoute: typeof CaseStudyRoute
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
+  PricingRoute: typeof PricingRoute
   PrivacyRoute: typeof PrivacyRoute
   ProductsRoute: typeof ProductsRoute
   RegulatoryComplianceRoute: typeof RegulatoryComplianceRoute
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -242,6 +262,7 @@ const rootRouteChildren: RootRouteChildren = {
   CaseStudyRoute: CaseStudyRoute,
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
+  PricingRoute: PricingRoute,
   PrivacyRoute: PrivacyRoute,
   ProductsRoute: ProductsRoute,
   RegulatoryComplianceRoute: RegulatoryComplianceRoute,
