@@ -122,6 +122,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const [openFaq, setOpenFaq] = useState(0);
+
   return (
     <div className="page">
       <section className="hero">
