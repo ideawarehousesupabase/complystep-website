@@ -115,38 +115,6 @@ function Pricing() {
         </div>
       </section>
 
-      <section className="sec sec-soft" id="comparison">
-        <div className="container">
-          <div className="eyebrow">
-            <span className="dot" /> Comparison
-          </div>
-          <h2 className="h2">Built for compliance, not generic content review.</h2>
-          <div className="comp-wrap">
-            <table className="comp-table">
-              <thead>
-                <tr>
-                  <th>Capability</th>
-                  <th>Generic AI Tools</th>
-                  <th>Legacy RegTech</th>
-                  <th>Workflow Tools</th>
-                  <th className="hi">ComplyStep</th>
-                </tr>
-              </thead>
-              <tbody>
-                {ROWS.map(([cap, a, b, c]) => (
-                  <tr key={cap}>
-                    <td>{cap}</td>
-                    <td className="no">{a}</td>
-                    <td className="no">{b}</td>
-                    <td className="no">{c}</td>
-                    <td className="hi yes">✓</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
