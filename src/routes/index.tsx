@@ -152,7 +152,7 @@ function Home() {
           </p>
           <div className="hero-btns">
             <Link to="/contact" className="btn-p">
-              Book a Demo
+              Contact Us
             </Link>
             <Link to="/products" className="btn-s">
               See the Platform
@@ -238,7 +238,7 @@ function Home() {
               launch faster, with less risk.
             </p>
             <Link to="/contact" className="btn-p">
-              Book a Demo
+              Contact Us
             </Link>
           </div>
         </div>

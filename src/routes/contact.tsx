@@ -32,13 +32,13 @@ const BUSINESS_TYPES = [
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Book a Demo | ComplyStep" },
+      { title: "Contact Us | ComplyStep" },
       {
         name: "description",
         content:
-          "Book a demo of ComplyStep and see how UK regulated brands protect their compliance equity across every campaign.",
+          "Contact ComplyStep and see how UK regulated brands protect their compliance equity across every campaign.",
       },
-      { property: "og:title", content: "Book a Demo | ComplyStep" },
+      { property: "og:title", content: "Contact Us | ComplyStep" },
       {
         property: "og:description",
         content:
@@ -70,7 +70,7 @@ function Contact() {
           <div className="eyebrow">
             <span className="dot" /> Get In Touch
           </div>
-          <h2 className="h2">Book a demo of ComplyStep.</h2>
+          <h2 className="h2">Contact the ComplyStep team.</h2>
           <div className="contact-wrap">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
