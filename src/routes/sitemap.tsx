@@ -80,7 +80,7 @@ function Sitemap() {
                 <h4>{g.title}</h4>
                 <div className="sitemap-col">
                   {g.links.map((l) => (
-                    <Link key={l.label} to={l.to} hash={l.hash}>
+                    <Link key={l.label} to={l.to} {...(l.hash ? { hash: l.hash } : {})}>
                       {l.label}
                     </Link>
                   ))}
