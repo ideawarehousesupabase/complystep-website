@@ -14,14 +14,21 @@ const GROUPS: Array<{ title: string; links: Array<{ to: string; label: string }>
     title: "Company",
     links: [
       { to: "/about", label: "About Us" },
+      { to: "/about", label: "Founder", hash: "founder-section" },
+      { to: "/blog", label: "Blog" },
+      { to: "/case-study", label: "Case Studies" },
+      { to: "/sitemap", label: "Sitemap" },
       { to: "/contact", label: "Contact Us" },
     ],
   },
   {
-    title: "Insights",
+    title: "Industries",
     links: [
-      { to: "/blog", label: "Blog" },
-      { to: "/case-study", label: "Case Studies" },
+      { to: "/industries", label: "Financial Advisors", hash: "seg-finance" },
+      { to: "/industries", label: "Private Healthcare", hash: "seg-healthcare" },
+      { to: "/industries", label: "Legal Services", hash: "seg-legal" },
+      { to: "/industries", label: "Gambling & Affiliates", hash: "seg-gambling" },
+      { to: "/industries", label: "All Industries" },
     ],
   },
   {
