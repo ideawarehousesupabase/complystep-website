@@ -48,13 +48,6 @@ const PLANS = [
   },
 ];
 
-const ROWS: Array<[string, string, string, string]> = [
-  ["Pre-publication to live verification", "✗", "Limited", "✗"],
-  ["Predictive compliance forecasting", "✗", "✗", "✗"],
-  ["UK FCA / CAP / DMCC training", "✗", "Limited", "✗"],
-  ["Performance-linked compliance memory", "✗", "✗", "✗"],
-  ["SME-friendly pricing", "Per-seat", "Enterprise-only", "Seat-based"],
-];
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
