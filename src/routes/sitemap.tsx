@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-const GROUPS: Array<{ title: string; links: Array<{ to: string; label: string }> }> = [
+const GROUPS: Array<{
+  title: string;
+  links: Array<{ to: string; label: string; hash?: string }>;
+}> = [
   {
     title: "Platform",
     links: [
