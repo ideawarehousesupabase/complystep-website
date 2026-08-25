@@ -1417,3 +1417,22 @@ footer {
     bottom: 84px;
   }
 }
+
+/* Sitemap page link columns (light background) */
+.sitemap-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+.sitemap-col a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #475069;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.sitemap-col a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
