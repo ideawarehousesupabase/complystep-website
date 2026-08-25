@@ -785,6 +785,15 @@ h1 .accent {
   margin: 14px auto 28px;
   font-size: 15.5px;
 }
+.cta-banner .btn-s {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+}
+.cta-banner .btn-s:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}
 
 /* FAQ */
 .faq-wrap {
