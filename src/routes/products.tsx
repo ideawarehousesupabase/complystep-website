@@ -170,10 +170,16 @@ function Product() {
           </p>
 
           <Carousel opts={{ align: "start" }} className="shot-carousel">
-            <CarouselContent>
+            <CarouselContent className="shot-content">
               {SCREENSHOTS.map((s) => (
-                <CarouselItem key={s.label} className="shot-item">
-                  <Dialog>
+                <CarouselItem key={s.label} className="shot-item pl-0">
+                  <Dialog
+                    onOpenChange={(open) => {
+                      if (typeof document !== "undefined") {
+                        document.body.classList.toggle("lightbox-open", open);
+                      }
+                    }}
+                  >
                     <DialogTrigger asChild>
                       <button
                         type="button"

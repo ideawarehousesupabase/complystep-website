@@ -560,8 +560,12 @@ h1 .accent {
   margin-top: 40px;
   padding: 0 44px;
 }
+.shot-content {
+  margin-left: 0;
+  gap: 24px;
+}
 .shot-item {
-  flex-basis: 80%;
+  flex-basis: calc(50% - 12px);
 }
 .shot-card {
   display: block;
@@ -614,6 +618,12 @@ h1 .accent {
   font-weight: 700;
   color: var(--ink);
   margin: 0;
+}
+
+/* Hide the fixed navbar while a screenshot lightbox is open (it otherwise
+   sits above the dialog overlay, which uses a lower z-index). */
+body.lightbox-open .navbar {
+  display: none;
 }
 
 /* PRICING */
@@ -1237,7 +1247,7 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
   .shot-item {
-    flex-basis: 100%;
+    flex-basis: 78%;
   }
   .charts-grid {
     grid-template-columns: 1fr;
@@ -1284,6 +1294,12 @@ footer {
   }
   .shot-carousel {
     padding: 0 36px;
+  }
+  .shot-item {
+    flex-basis: 100%;
+  }
+  .shot-content {
+    gap: 16px;
   }
   .blog-grid {
     grid-template-columns: 1fr;
