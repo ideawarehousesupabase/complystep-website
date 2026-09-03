@@ -1,4 +1,34 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+
+const SCREENSHOTS = [
+  { label: "Dashboard", src: "/screenshots/dashboard.png", alt: "ComplyStep dashboard overview screen" },
+  { label: "Campaigns", src: "/screenshots/campaigns.png", alt: "ComplyStep campaigns list screen" },
+  {
+    label: "Campaign Detail",
+    src: "/screenshots/campaign-detail.png",
+    alt: "ComplyStep campaign detail screen",
+  },
+  {
+    label: "New Campaign",
+    src: "/screenshots/new-campaign.png",
+    alt: "ComplyStep new campaign creation screen",
+  },
+  { label: "Integrations", src: "/screenshots/integrations.png", alt: "ComplyStep integrations screen" },
+  {
+    label: "Compliance Reports",
+    src: "/screenshots/compliance-reports.png",
+    alt: "ComplyStep compliance reports screen",
+  },
+  { label: "Notifications", src: "/screenshots/notifications.png", alt: "ComplyStep notifications screen" },
+];
 
 const PILLARS = [
   {
@@ -125,6 +155,47 @@ function Product() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="sec">
+        <div className="container">
+          <div className="eyebrow">
+            <span className="dot" /> See It In Action
+          </div>
+          <h2 className="h2">A first look at the platform.</h2>
+          <p className="lede" style={{ maxWidth: 640 }}>
+            Real screens from the ComplyStep application — click any screenshot to view it full
+            size.
+          </p>
+
+          <Carousel opts={{ align: "start" }} className="shot-carousel">
+            <CarouselContent>
+              {SCREENSHOTS.map((s) => (
+                <CarouselItem key={s.label} className="shot-item">
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button
+                        type="button"
+                        className="shot-card"
+                        aria-label={`View ${s.label} screenshot full size`}
+                      >
+                        <img src={s.src} alt={s.alt} loading="lazy" />
+                        <span className="shot-card-label">{s.label}</span>
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="shot-dialog max-w-4xl w-[92vw] p-3 sm:p-4">
+                      <DialogTitle className="sr-only">{s.label} screenshot</DialogTitle>
+                      <img src={s.src} alt={s.alt} className="shot-dialog-img" />
+                      <p className="shot-dialog-caption">{s.label}</p>
+                    </DialogContent>
+                  </Dialog>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </section>
 
