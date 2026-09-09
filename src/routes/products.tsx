@@ -41,7 +41,7 @@ const PILLARS = [
       "Explainable, multi-agent AI reasoning",
       "Trained on FCA, ASA, MHRA and CAP Code sources",
     ],
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?fm=jpg&q=60&w=900&auto=format&fit=crop",
+    img: "/depth_of_intelligence.png",
     alt: "team reviewing compliance intelligence dashboard",
     reverse: false,
   },
@@ -55,7 +55,7 @@ const PILLARS = [
       "Live monitoring and affiliate surveillance",
       "Regulator-ready audit evidence in one trail",
     ],
-    img: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?fm=jpg&q=60&w=900&auto=format&fit=crop",
+    img: "/lifecycle_coverage.png",
     alt: "live monitoring dashboard on screen",
     reverse: true,
   },
@@ -69,7 +69,7 @@ const PILLARS = [
       "Risk controls linked to campaign performance",
       "Faster approvals mean faster launches",
     ],
-    img: "https://images.unsplash.com/photo-1552664730-d307ca884978?fm=jpg&q=60&w=900&auto=format&fit=crop",
+    img: "/compliance_growth.png",
     alt: "analytics charts on laptop screen",
     reverse: false,
   },
@@ -118,7 +118,7 @@ function Product() {
                   <i className={`fas ${p.icon}`} />
                 </div>
                 <h4>
-                  {p.emoji} {p.title}
+                  {p.title}
                 </h4>
                 <p>{p.body}</p>
               </div>
