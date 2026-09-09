@@ -20,7 +20,7 @@ export function SiteFooter() {
                 width={1061}
                 height={229}
                 loading="lazy"
-                style={{ height: 36, width: "auto", display: "block", maxWidth: "100%" }}
+                style={{ height: 48, width: "auto", display: "block", maxWidth: "100%" }}
               />
             </Link>
             <p>

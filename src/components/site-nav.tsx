@@ -29,7 +29,7 @@ export function SiteNav() {
             height={229}
             loading="eager"
             decoding="sync"
-            style={{ height: 36, width: "auto", display: "block", maxWidth: "100%" }}
+            style={{ height: 48, width: "auto", display: "block", maxWidth: "100%" }}
           />
         </Link>
 

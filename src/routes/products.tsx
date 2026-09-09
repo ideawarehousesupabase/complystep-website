@@ -199,8 +199,8 @@ function Product() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="left-0 sm:-left-12" />
+            <CarouselNext className="right-0 sm:-right-12" />
           </Carousel>
         </div>
       </section>
