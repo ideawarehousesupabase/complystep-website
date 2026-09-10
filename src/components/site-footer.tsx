@@ -55,18 +55,18 @@ export function SiteFooter() {
               </Link>
               <Link to="/blog">Blog</Link>
               <Link to="/case-study">Case Studies</Link>
+              <Link to="/contact">Contact Us</Link>
               <Link to="/sitemap">Sitemap</Link>
             </div>
           </div>
           <div>
-            <div className="f-col-title">Connect Us</div>
-            <div className="f-col f-social">
+            <div className="f-col-title">Connect with us</div>
+            <div className="f-social" style={{ display: 'flex', flexDirection: 'row', gap: '16px' }}>
               {SOCIALS.map((s) => (
-                <a key={s.label} href={s.href} target="_blank" rel="noreferrer noopener">
-                  <i className={`fab ${s.icon}`} /> {s.label}
+                <a key={s.label} href={s.href} target="_blank" rel="noreferrer noopener" aria-label={s.label}>
+                  <i className={`fab ${s.icon}`} style={{ fontSize: '18px' }} />
                 </a>
               ))}
-              <Link to="/contact">Contact Us</Link>
             </div>
           </div>
         </div>
