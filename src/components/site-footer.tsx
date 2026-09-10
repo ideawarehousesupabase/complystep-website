@@ -4,7 +4,7 @@ const SOCIALS = [
   { label: "LinkedIn", icon: "fa-linkedin-in", href: "https://www.linkedin.com/company/complystep" },
   { label: "X", icon: "fa-x-twitter", href: "https://x.com/complystep" },
   { label: "Facebook", icon: "fa-facebook-f", href: "https://www.facebook.com/complystep" },
-  { label: "Instagram", icon: "fa-instagram", href: "https://www.instagram.com/complystep" },
+  { label: "Instagram", icon: "fa-instagram", href: "https://www.instagram.com/comply.step" },
 ];
 
 export function SiteFooter() {

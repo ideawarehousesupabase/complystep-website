@@ -118,7 +118,7 @@ function Contact() {
                 </div>
                 <div>
                   <strong>Email</strong>
-                  <span>hello@regpromolens.co.uk</span>
+                  <span>contact@complystep.co.uk</span>
                 </div>
               </div>
               <div className="c-detail">
